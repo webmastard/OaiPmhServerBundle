@@ -11,10 +11,10 @@ class RecordExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'get_record_sets'    => new \Twig_Function_Method($this, 'getRecordSets'),
-            'dublinize_record'   => new \Twig_Function_Method($this, 'dublinizeRecord'),
-            'get_record_id'      => new \Twig_Function_Method($this, 'getRecordId'),
-            'get_record_updated' => new \Twig_Function_Method($this, 'getRecordUpdated'),
+            'get_record_sets'    => new \Twig_SimpleFunction('getRecordSets', array($this, 'getRecordSets')),
+            'dublinize_record'   => new \Twig_SimpleFunction('dublinizeRecord', array($this, 'dublinizeRecord')),
+            'get_record_id'      => new \Twig_SimpleFunction('getRecordId', array($this, 'getRecordId')),
+            'get_record_updated' => new \Twig_SimpleFunction('getRecordUpdated', array($this, 'getRecordUpdated')),
         );
     }
 
